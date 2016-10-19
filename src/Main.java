@@ -7,7 +7,7 @@ public class Main {
         FrequencyChecker frequencyChecker = new MessageFilter(N,Interval);
         while (true) {
             Thread.sleep(pause);
-            System.out.println(frequencyChecker.isAllowed());
+            System.out.println(frequencyChecker.isAllowed(System.currentTimeMillis()));
 
         }
     }

@@ -17,10 +17,10 @@ public class MessageFilter implements FrequencyChecker {
         messageTimestamps = new LinkedList<Long>();
     }
 
-    public boolean isAllowed() {
+    public boolean isAllowed(long now) {
         synchronized (this) {
             while (messageTimestamps.size() > 0) {
-                if (System.currentTimeMillis() - messageTimestamps.get(0) > timeInterval) {
+                if (now - messageTimestamps.get(0) > timeInterval) {
                     messageTimestamps.remove(0);
                 } else {
                     break;

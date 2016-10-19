@@ -1,3 +1,3 @@
 public interface FrequencyChecker {
-    boolean isAllowed();
+    boolean isAllowed(long now);
 }
